@@ -51,3 +51,9 @@ document.addEventListener('keydown', (event) => {
     window.addEventListener('resize', () => {
       changeColor.style.background = 'teal'
     });
+
+    window.addEventListener('wheel', () => {
+      changeColor.style.background = 'white'
+    });
+
+  
