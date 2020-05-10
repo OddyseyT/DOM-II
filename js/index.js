@@ -38,3 +38,16 @@ document.addEventListener('keydown', (event) => {
 
     changePic.addEventListener ('click', (event) => {changePic.src = "img/fun-bus.jpg"}
     );
+
+    chooseText = document.querySelector('.text-content');
+
+    document.addEventListener ('select', (chooseText) => {
+      const selection = event.target.value.substring(event.target.selectionStart, event.target.selectionEnd);
+  alert(`you selected: ${selection}`);
+    });
+
+    changeColor = document.querySelector('body');
+
+    window.addEventListener('resize', () => {
+      changeColor.style.background = 'teal'
+    });
