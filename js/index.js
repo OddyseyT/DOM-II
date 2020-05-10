@@ -29,3 +29,12 @@ document.addEventListener('keydown', (event) => {
       element.style.background = 'white'})
     }
     });
+
+    const changePic = document.querySelector('img');
+
+    changePic.addEventListener('dblclick', (event) => {
+      changePic.src ="img/data-driven-new-market.jpg"
+    });
+
+    changePic.addEventListener ('click', (event) => {changePic.src = "img/fun-bus.jpg"}
+    );
