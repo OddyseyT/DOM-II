@@ -12,3 +12,20 @@ boatImage.addEventListener('mouseleave', () => {
   })
 
 
+const altText = document.querySelectorAll("h2");
+console.log(altText);
+document.addEventListener('keydown', (event) => {
+    if(event){
+      console.log(event);
+      altText.forEach((element) => {element.style.color = 'yellow'
+      element.style.background = 'black'})
+    };
+  });
+
+  document.addEventListener ('keyup', (event) => {
+    if(event){
+      altText.forEach((element)=>
+      {element.style.color = 'black'
+      element.style.background = 'white'})
+    }
+    });
