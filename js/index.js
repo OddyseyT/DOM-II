@@ -46,7 +46,7 @@ document.addEventListener('keydown', (event) => {
   alert(`you selected: ${selection}`);
     });
 
-    changeColor = document.querySelector('body');
+    const changeColor = document.querySelector('body');
 
     window.addEventListener('resize', () => {
       changeColor.style.background = 'teal'
@@ -56,4 +56,29 @@ document.addEventListener('keydown', (event) => {
       changeColor.style.background = 'white'
     });
 
+    const noContext = document.querySelectorAll ('img');
+
+    document.addEventListener ('contextmenu', (event) => {
+      if(event){
+        noContext.forEach((element)=>
+        {event.preventDefault()});
+      }
+      });
   
+  const contentChange = document.querySelector('.content-pick');
+
+  contentChange.addEventListener ('click', (event) => {contentChange.style.color = 'purple'}
+  );
+
+  const destinationChange = document.querySelector('.destination');
+
+  destinationChange.addEventListener ('click', () => {
+    destinationChange.style.color = 'teal'
+    event.stopPropagation();
+  });
+
+  const stopLink = document.querySelector(".nav-link");
+stopLink.addEventListener('click', (event) => {
+  event.preventDefault();
+  
+});
