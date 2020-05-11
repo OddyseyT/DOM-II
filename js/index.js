@@ -39,19 +39,22 @@ document.addEventListener('keydown', (event) => {
     changePic.addEventListener ('click', (event) => {changePic.src = "img/fun-bus.jpg"}
     );
 
-    chooseText = document.querySelector('body');
+    const chooseText = document.querySelector('body');
 
-    chooseText.addEventListener ('select', (event) => {
-      const selection = event.target.value.substring(event.target.selectionStart, event.target.selectionEnd);
-  alert(`you selected: ${selection}`);
+    chooseText.addEventListener('copy', (event) => {
+      const selection = document.getSelection();
+      event.clipboardData.setData('text/plain', selection.toString().toUpperCase());
+      event.preventDefault();
+      window.alert(`you copied ${selection} to the clipboard`);
     });
+
 
     const changeColor = document.querySelector('body');
 
     window.addEventListener('resize', () => {
       changeColor.style.background = 'teal'
     });
-
+    
     window.addEventListener('wheel', () => {
       changeColor.style.background = 'white'
     });
