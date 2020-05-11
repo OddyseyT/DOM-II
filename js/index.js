@@ -39,9 +39,9 @@ document.addEventListener('keydown', (event) => {
     changePic.addEventListener ('click', (event) => {changePic.src = "img/fun-bus.jpg"}
     );
 
-    chooseText = document.querySelector('.text-content');
+    chooseText = document.querySelector('body');
 
-    document.addEventListener ('select', (chooseText) => {
+    chooseText.addEventListener ('select', (event) => {
       const selection = event.target.value.substring(event.target.selectionStart, event.target.selectionEnd);
   alert(`you selected: ${selection}`);
     });
@@ -58,24 +58,26 @@ document.addEventListener('keydown', (event) => {
 
     const noContext = document.querySelectorAll ('img');
 
-    document.addEventListener ('contextmenu', (event) => {
+   noContext.forEach(image => {
+     image.addEventListener('contextmenu', (event) => {
       if(event){
         noContext.forEach((element)=>
         {event.preventDefault()});
       }
       });
-  
+    });
   const contentChange = document.querySelector('.content-pick');
 
   contentChange.addEventListener ('click', (event) => {contentChange.style.color = 'purple'}
   );
 
-  const destinationChange = document.querySelector('.destination');
+  const destinationChange = document.querySelectorAll('.destination');
 
-  destinationChange.addEventListener ('click', () => {
-    destinationChange.style.color = 'teal'
+  destinationChange.forEach (destinationBox => {destinationBox.addEventListener ('click', () => {destinationBox 
+    .style.color = 'teal'
     event.stopPropagation();
   });
+});
 
   const stopLink = document.querySelector(".nav-link");
 stopLink.addEventListener('click', (event) => {
